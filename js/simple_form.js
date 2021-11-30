@@ -1,7 +1,6 @@
 /**
  * Update the salary value when scrolled from left to right and vice-versa
  */
-
  const salary = document.querySelector('#salary');
  const output = document.querySelector('.salary-output');
  output.textContent = salary.value;
@@ -12,7 +11,6 @@
  /**
   * To validate the name field using the REGEX expression
   */
- 
  const text = document.querySelector('#text');
  const textError = document.querySelector('.text-error');
  text.addEventListener('input', function() {
@@ -25,7 +23,6 @@
  /**
  * To validate the email field using the REGEX expression
  */
-
   const email = document.querySelector('#email');
   const emailError = document.querySelector('.email-error');
   email.addEventListener('input', function() {
@@ -57,5 +54,15 @@
         else telError.textContent = "Telephone Number is Incorrect";
     });
     
+/**
+* To validate the password field using the REGEX expression
+*/
+    const pwd = document.querySelector('#pwd');
+    const pwdError = document.querySelector('.pwd-error');
+    pwd.addEventListener('input', function(){
+        let pwdRegex = RegExp('^[a-z A-Z 0-9 @#$%^&+=].{8,}$');
+        if(pwdRegex.test(pwd.value)) pwdError.textContent = "";
+        else pwdError.textContent = "Password is Incorrect";
+    });
 
 
